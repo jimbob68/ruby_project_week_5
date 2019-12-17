@@ -56,6 +56,15 @@ class Vet
     return results.map{ |vet| Vet.new(vet) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM vets WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    vet_hash = results[0]
+    vet = Vet.new(animal_hash)
+    return vet
+   end
+
   def self.delete_all()
     sql = "DELETE FROM vets;"
     SqlRunner.run(sql)
