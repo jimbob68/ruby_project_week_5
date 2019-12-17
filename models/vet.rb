@@ -2,7 +2,8 @@
 
 class Vet
 
-  attr_reader :id, :vet_name, :practice_no
+  attr_reader :id
+  attr_accessor :vet_name, :practice_no
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -22,6 +23,18 @@ class Vet
     values = [@vet_name, @practice_no]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE vets
+    SET (
+    vet_name,
+    practice_no
+    ) = (
+      $1, $2
+    ) WHERE id = $3"
+    values = [@vet_name, @practice_no]
+    SqlRunner.run(sql, values)
   end
 
   def animals

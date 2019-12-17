@@ -69,8 +69,6 @@ animal8 = Animal.new({
 })
 animal8.save()
 
-
-
 vet1 = Vet.new({
   'vet_name' => 'Alfred Butcher',
   'practice_no' => '01'

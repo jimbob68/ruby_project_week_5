@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel='stylesheet' href='/style.css'/>
     <meta charset="utf-8">
-    <title>Vets</title>
-  </head>
-  <body>
+    <title>Vivisection Vets</title>
 
-    <nav>
-      <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/about_us"></a></li>
-      </ul>
-    </nav>
-    <%= yield %>
-  </body>
+  </head>
+    <body>
+      <nav id ="menu">
+        <ul>
+          <li><a href="/">Vivisection Vets</a></li>
+          <li class="menu-item"><a href="/animals">All Animals</a></li>
+          <li class="menu-item"><a href='/animals/new'>New Animal Details</a></li>
+        </ul>
+      </nav>
+              <%= yield %>
+    </body>
 </html>

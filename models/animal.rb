@@ -2,7 +2,8 @@
 
 class Animal
 
- attr_reader :id, :name, :dob, :type, :owner_contact_no
+ attr_reader :id
+  attr_accessor :name, :dob, :type, :owner_contact_no
 
  def initialize( options )
    @id = options['id'].to_i if options['id']
@@ -25,6 +26,20 @@ class Animal
     values = [@name, @dob, @type, @owner_contact_no]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE animals SET
+    (
+       name,
+       dob,
+       type,
+       owner_contact_no
+      ) = (
+        $1, $2, $3, $4
+      ) WHERE id = $5"
+      values = [@name, @dob, @type, @owner_contact_no]
+      SqlRunner.run(sql, values)
   end
 
   def delete()

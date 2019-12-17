@@ -1,14 +1,23 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry' )
-require_relative( '../models/animals.rb' )
+require_relative( '../models/animal.rb' )
 also_reload( '../models/*' )
 
-
-get '/' do
-  erb(:home)
+get '/animals' do
+  @animals = Animal.all()
+  erb( :"animals/index")
 end
 
-get '/about_us' do
-  erb :about_us
+
+# get '/animals/index/?' do
+#   erb(:"animals/index")
+# end
+
+get '/animals/new/?' do
+  erb (:"animals/new")
+end
+
+get '/animals/show/?' do
+   erb (:"animals/show")
 end
