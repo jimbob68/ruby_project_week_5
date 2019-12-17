@@ -10,5 +10,6 @@ get '/vets/home/?' do
 end
 
 get '/vets/index/?' do
+  @vets = Vet.all()
   erb( :"vets/index" )
 end

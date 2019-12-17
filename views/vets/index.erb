@@ -1,1 +1,17 @@
 <h1>Appointments Diary</h1>
+<table>
+  <tr>
+    <th>Vet Name</th>
+    <th></th>
+    <th>Vet Practice No</th>
+  </tr>
+    <% for vet in @vets %>
+  <tr>
+    <td><a href="/vets/<%= vet.id %>">
+      <%= vet.vet_name %></a></td>
+    <td>|</td>
+      <td><%= vet.practice_no %></td>
+  </tr>
+      <% end %>
+
+</table>

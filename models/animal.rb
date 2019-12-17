@@ -3,7 +3,7 @@
 class Animal
 
  attr_reader :id
-  attr_accessor :name, :dob, :type, :owner_contact_no
+  attr_accessor :name, :dob, :type, :owner_contact_no, :vet_id
 
  def initialize( options )
    @id = options['id'].to_i if options['id']
@@ -11,6 +11,7 @@ class Animal
    @dob = options['dob'].to_s
    @type = options['type']
    @owner_contact_no = options['owner_contact_no'].to_s
+   @vet_id = options['vet_id'].to_i
   end
 
   def save()
@@ -18,12 +19,13 @@ class Animal
     name,
     dob,
     type,
-    owner_contact_no
+    owner_contact_no,
+    vet_id
     ) VALUES(
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     ) RETURNING id
     "
-    values = [@name, @dob, @type, @owner_contact_no]
+    values = [@name, @dob, @type, @owner_contact_no, @vet_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -34,11 +36,12 @@ class Animal
        name,
        dob,
        type,
-       owner_contact_no
+       owner_contact_no,
+       vet_id
       ) = (
-        $1, $2, $3, $4
-      ) WHERE id = $5"
-      values = [@name, @dob, @type, @owner_contact_no]
+        $1, $2, $3, $4, $5
+      ) WHERE id = $6"
+      values = [@name, @dob, @type, @owner_contact_no, @vet_id, @id]
       SqlRunner.run(sql, values)
   end
 
