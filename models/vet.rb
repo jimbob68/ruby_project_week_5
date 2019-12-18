@@ -61,7 +61,7 @@ class Vet
     values = [id]
     results = SqlRunner.run(sql, values)
     vet_hash = results[0]
-    vet = Vet.new(animal_hash)
+    vet = Vet.new(vet_hash)
     return vet
    end
 

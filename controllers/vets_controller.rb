@@ -21,7 +21,7 @@ end
 
 get '/vets/:id/?' do
   @vet = Vet.find(params['id'])
-  erb(:show)
+  erb(:"vets/show")
 end
 
 post '/vets/new' do
