@@ -4,18 +4,21 @@
     <link rel='stylesheet' href='/style.css'/>
     <meta charset="utf-8">
     <title>Vivisection Vets</title>
+    <header>
+      <h1>Welcome To Vivisection Vets</h1>
+    </header>
 
+    <nav id ="menu">
+      <ul>
+        <li><a href="/">Vivisection Vets</a></li>
+        <li class="menu-item"><a href="/animals">All Animals</a></li>
+        <li class="menu-item"><a href='/animals/new'>New Animal Details</a></li>
+        <li class="menu-item"><a href="/vets/index">Vets</a></li>
+        <li class="menu-item"><a href="/vets/new">New Vets</a></li>
+      </ul>
+    </nav>
   </head>
     <body>
-      <nav id ="menu">
-        <ul>
-          <li><a href="/">Vivisection Vets</a></li>
-          <li class="menu-item"><a href="/animals">All Animals</a></li>
-          <li class="menu-item"><a href='/animals/new'>New Animal Details</a></li>
-          <li class="menu-item"><a href="/vets/index">Vets</a></li>
-          <li class="menu-item"><a href="/vets/new">New Vets</a></li>
-        </ul>
-      </nav>
               <%= yield %>
     </body>
 </html>

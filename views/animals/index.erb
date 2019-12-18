@@ -1,28 +1,16 @@
 
-  <h1>Animals</h1>
+  <p><% for animal in @animals %></p>
+        <p><%= animal.id %></p>
+      <p><%= animal.name %></p>
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th>DOB</th>
-      <th></th>
-      <th>Type</th>
-      <th></th>
-      <th>Owner Contact Details</th>
-    </tr>
-    <% for animal in @animals %>
-    <tr>
-      <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-      <td>|</td>
-      <td><%= animal.dob %></td>
-      <td>|</td>
-      <td><%= animal.type %></td>
-      <td>|</td>
-      <td><%= animal.owner_contact_no %></td>
-      <td>|</td>
-      <td><%= animal.vet_id %></td>
-    </tr>
+      <p><%= animal.dob %></p>
+
+      <p><%= animal.type %></p>
+
+      <p><%= animal.owner_contact_no %></p>
+
+      <p><%= animal.treatment_notes %></P.
+
+      <p><%= animal.vet_id %></p>
+
     <% end %>
-
-  </table>

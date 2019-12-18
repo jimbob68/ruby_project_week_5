@@ -1,17 +1,52 @@
-<h1>Appointments Diary</h1>
-<table>
-  <tr>
-    <th>Vet Name</th>
-    <th></th>
-    <th>Vet Practice No</th>
-  </tr>
-    <% for vet in @vets %>
-  <tr>
-    <td><a href="/vets/<%= vet.id %>">
-      <%= vet.vet_name %></a></td>
-    <td>|</td>
-      <td><%= vet.practice_no %></td>
-  </tr>
-      <% end %>
+  <h1>Appointments Diary</h1>
+<form>
+<fieldset>
+  <legend>Vet Name:</legend>
+  <label for="vet_name"></label>
+  <input type="text" id="vet_name" name="vet_name" value="vet_name">
+  <legend>Practice No:</legend>
+  <label for="practice_no"></label>
+  <input type="number" id="practice_no" name="practice_no" value="practice_no">
 
-</table>
+    <h1>Vet Practice No</h1>
+
+    <% for vet in @vets %>
+
+    <a href="/vets/index/<%= vet.id %>">
+      <%= vet.vet_name %></a>
+
+      <%= vet.practice_no %>
+
+      <% end %>
+</fieldset>
+</form>
+<br><br>
+<form>
+  <fieldset>
+<label for="week">Weekly Appointment List</label>
+  <input type="week"  id="week" name="week">
+  </fieldset>
+  <br><br>
+  <textarea name="weekly_diary" rows="2" cols="5"></textarea>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="form-el">
+  <label for="vet_name">Vet Name</label>
+      <input type="text"  name="vet_name" id="vet_name" value="vet_name"/>
+</div>
+
+<div class="form-el">
+  <label for="practice_no">Practice No</label>
+      <input type="text" name="practice_no" id="practice_no" value="practice_no"/>
+    </div> -->

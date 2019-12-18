@@ -1,2 +1,60 @@
 <h1>New Animals</h1>
 <p>This page is for all new animals who visit the practice. If the owner has visited us previously then they may already be registered.</p>
+<form action="/animals" method="post">
+  <fieldset>
+    <label for="name">Animal Name:</label>
+    <input type="input" id="name" name="name">
+  </fieldset>
+
+  <fieldset>
+    <label for="animal-type">Animal Type</label>
+    <select  id="animal-type" name="type">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="tortoise">Tortoise</option>
+      <option value="cow">Cow</option>
+      <option value="horse">Horse</option>
+      <option value="snake">Snake</option>
+      <option value="rabbit">Rabbit</option>
+      <option value="sheep">Sheep</option>
+    </select>
+  </fieldset>
+
+  <br><br>
+
+  <label for="vet_id">Choose a Vet</label>
+  <select name="vet_id" id="vet_id">
+    <% for vet in @vets %>
+    <option value="<%= vet.id %>"><%= vet.vet_name %></option>
+    <% end %>
+  </select>
+  <fieldset>
+    <label for="dob">Animal Date of Birth:</label>
+    <input type="date" name="dob" id="date">
+  </fieldset>
+  <!-- Month: -->
+  <!-- <input type="number" name="month" value="1" min="1" max="12">
+  Year:
+  <input type="number" name="year" value="2019" min="1900" max="2021"> -->
+
+  <br><br>
+
+  <fieldset>
+    <label for="owner_contact_no">Owner Contact No:</label>
+    <input type="input" name="owner_contact_no" id="owner_contact_no">
+  </fieldset>
+
+  <!-- <li>
+  <label for="type">Type/Breed:</label>
+  <input type="text" id="type" name="type">
+</li> -->
+
+<fieldset>
+  <label for="treatment_notes">Treatment Notes:</label>
+  <textarea id="treatment_notes" name="treatment_notes"></textarea>
+  </fieldset>
+    <input type="submit" value="Submit"/>
+</form>
+
+
+<!-- </ul> -->

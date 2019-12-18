@@ -13,18 +13,26 @@ get '/vets/index/?' do
   @vets = Vet.all()
   erb( :"vets/index" )
 end
+
 get '/vets/new/?' do
   # Vet.new(params).save
   erb(:"vets/new")
 end
-
 
 get '/vets/:id/?' do
   @vet = Vet.find(params['id'])
   erb(:show)
 end
 
-# post '/vets/new/?' do
-#   Vet.new(params).save
-#   redirect to '/vets/new/?'
+post '/vets/new' do
+  Vet.new(params).save
+  redirect to '/vets/new'
+end
+
+# post '/vets/new' do
+#   "Hello World"
+# end
+#
+# post '/vets/vets/new' do
+#   "Hello World"
 # end
