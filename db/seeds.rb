@@ -1,44 +1,53 @@
 require_relative( '../models/vet.rb' )
 require_relative( '../models/animal.rb' )
+require_relative( '../models/owner.rb' )
 require( 'pry' )
+
 
 
 Animal.delete_all()
 Vet.delete_all()
+# Owner.delete_all()
 
 
 vet1 = Vet.new({
-  'vet_name' => 'Alfred Butcher',
+  'first_name' => 'Alfred',
+  'last_name' => 'Butcher',
   'practice_no' => '01'
 })
 vet1.save()
 
 vet2 = Vet.new({
-  'vet_name' => 'Jane McTavish',
+  'first_name' => 'Jane',
+  'last_name' => 'McTavish',
   'practice_no' => '02'
 })
 vet2.save()
 
 vet3 = Vet.new({
-  'vet_name' => 'Severus Tich',
+  'first_name' => 'Severus',
+  'last_name' => 'Tich',
   'practice_no' => '03'
   })
 vet3.save()
 
 vet4 = Vet.new({
-  'vet_name' => 'Babs Fielding',
+  'first_name' => 'Babs',
+  'last_name' => 'Fielding',
   'practice_no' => '01'
   })
 vet4.save()
 
 vet5 = Vet.new({
-  'vet_name' => 'Rhonda Robertson',
+  'first_name' => 'Rhonda',
+  'last_name' => 'Robertson',
   'practice_no' => '02'
 })
 vet5.save()
 
 vet6 = Vet.new({
-  'vet_name' => 'Herrman Pinscher',
+  'first_name' => 'Herrman',
+  'last_name' => 'Pinscher',
   'practice_no' => '03'
 })
 vet6.save()
@@ -47,7 +56,6 @@ animal1 = Animal.new({
   'name' => 'Willow',
   'dob' => '17/06/2011',
   'type' => 'cat',
-  'owner_contact_no' => '01654970751',
   'treatment_notes' => 'spayed',
   'vet_id' => vet1.id
 })
@@ -57,7 +65,6 @@ animal2 = Animal.new({
   'name' => 'Bonnie',
   'dob' => '18/04/2017',
   'type' => 'dog',
-  'owner_contact_no' => '01567332109',
   'treatment_notes' => 'flea treatment',
   'vet_id' => vet2.id
 })
@@ -67,7 +74,6 @@ animal3 = Animal.new({
   'name' => 'Gemma',
   'dob' => '14/07/2015',
   'type' => 'dog',
-  'owner_contact_no' => '09988776655',
   'treatment_notes' => 'wormed',
   'vet_id' => vet3.id
 })
@@ -77,7 +83,6 @@ animal4 = Animal.new({
   'name' => 'Daisy',
   'dob' => '04/03/2017',
   'type' => 'cow',
-  'owner_contact_no' => '00983214565',
   'treatment_notes' => 'udderectomy',
   'vet_id' => vet4.id
 })
@@ -87,7 +92,6 @@ animal5 = Animal.new({
   'name' => 'Firefly',
   'dob' => '05/12/2014',
   'type' => 'horse',
-  'owner_contact_no' => '03878325345',
   'treatment_notes' => 'gelded',
   'vet_id' => vet5.id
 })
@@ -97,7 +101,6 @@ animal6 = Animal.new({
   'name' => 'Sid',
   'dob' => '14/01/2007',
   'type' => 'snake',
-  'owner_contact_no' => '02953214760',
   'treatment_notes' => 'de-scale',
   'vet_id' => vet6.id
 })
@@ -107,7 +110,6 @@ animal7 = Animal.new({
   'name' => 'Frank',
   'dob' => '19/11/2018',
   'type' => 'Tortoise',
-  'owner_contact_no' => '08457234729',
   'treatment_notes' => 'hibernation check',
   'vet_id' => vet1.id
 })
@@ -117,11 +119,75 @@ animal8 = Animal.new({
   'name' => 'Manny',
   'dob' => '24/05/2013',
   'type' => 'cat',
-  'owner_contact_no' => '07956212467',
   'treatment_notes' => 'de-clawed',
   'vet_id' => vet2.id
 })
 animal8.save()
+
+owner1 = Owner.new({
+  'first_name' => 'Ruth',
+  'last_name' => 'Fraser',
+  'address' => '9 Goshen Crescent',
+  'contact_no' => '07956212467',
+  'number_of_pets' => '1'
+})
+
+owner2 = Owner.new({
+  'first_name' => 'Kyle',
+  'last_name' => 'Caffrey',
+  'address' => '40 Minto Place',
+  'contact_no' => '08457234729',
+  'number_of_pets' => '2'
+})
+
+owner3 = Owner.new({
+  'first_name' => 'Giles',
+  'last_name' => 'Branner',
+  'address' => '15 Broughton Road',
+  'contact_no' => '02953214760',
+  'number_of_pets' => '3'
+})
+
+owner4 = Owner.new({
+  'first_name' => 'Derek',
+  'last_name' => 'Kelso',
+  'address' => '18 Limpet Lane',
+  'contact_no' => '03878325345',
+  'number_of_pets' => '1'
+})
+
+owner5 = Owner.new({
+  'first_name' => 'Clarissa',
+  'last_name' => 'Small',
+  'address' => '76 Fortinghall Road',
+  'contact_no' => '00983214565',
+  'number_of_pets' => '3'
+})
+
+owner6 = Owner.new({
+  'first_name' => 'Ernst',
+  'last_name' => 'Blofeld',
+  'address' => ' 1 Spectre Street',
+  'contact_no' => '09988776655',
+  'number_of_pets' => '1'
+})
+
+owner7 = Owner.new({
+  'first_name' => 'Johnny',
+  'last_name' => 'Diamond',
+  'address' => '14 Oxford Street',
+  'contact_no' => '01567332109',
+  'number_of_pets' => '2'
+})
+
+owner8 = Owner.new({
+  'first_name' => 'Jon',
+  'last_name' => 'Arbuckle',
+  'address' => 'Cat Nip Avenue',
+  'contact_no' => '01654970751',
+  'number_of_pets' => '2'
+})
+
 
 binding.pry
 nil

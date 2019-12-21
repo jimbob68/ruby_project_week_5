@@ -3,11 +3,12 @@
 class Vet
 
   attr_reader :id
-  attr_accessor :vet_name, :practice_no
+  attr_accessor :first_name, :last_name, :practice_no
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @vet_name = options['vet_name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
     @practice_no = options['practice_no'].to_i
   end
 

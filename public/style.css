@@ -1,9 +1,10 @@
 body {
   background-color: coral;
+  font-family: 'Arial';
 }
 
 p {
-  font-family: inherit;
+
 }
 
 nav ul li  {
