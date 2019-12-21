@@ -14,14 +14,15 @@ class Vet
 
   def save()
     sql = "INSERT INTO vets (
-    vet_name,
+    first_name,
+    last_name,
     practice_no
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     ) RETURNING id"
-    values = [@vet_name, @practice_no]
+    values = [@first_name, @last_name, @practice_no]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -29,12 +30,13 @@ class Vet
   def update()
     sql = "UPDATE vets
     SET (
-    vet_name,
+    first_name,
+    last_name,
     practice_no
     ) = (
-      $1, $2
-    ) WHERE id = $3"
-    values = [@vet_name, @practice_no]
+      $1, $2, $3
+    ) WHERE id = $4"
+    values = [@first_name, @last_name, @practice_no]
     SqlRunner.run(sql, values)
   end
 
@@ -43,6 +45,13 @@ class Vet
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map{ |animal|Animal.new(animal)}
+  end
+
+  def owners
+    sql = "SELECT owner.* FROM owners WHERE id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |owner|Owner.new(owner)}
   end
 
   def delete()
@@ -70,7 +79,5 @@ class Vet
     sql = "DELETE FROM vets;"
     SqlRunner.run(sql)
   end
-
-
 
 end

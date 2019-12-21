@@ -4,10 +4,9 @@ require_relative( '../models/owner.rb' )
 require( 'pry' )
 
 
-
-Animal.delete_all()
 Vet.delete_all()
-# Owner.delete_all()
+Animal.delete_all()
+Owner.delete_all()
 
 
 vet1 = Vet.new({
@@ -131,6 +130,7 @@ owner1 = Owner.new({
   'contact_no' => '07956212467',
   'number_of_pets' => '1'
 })
+owner1.save()
 
 owner2 = Owner.new({
   'first_name' => 'Kyle',
@@ -139,6 +139,7 @@ owner2 = Owner.new({
   'contact_no' => '08457234729',
   'number_of_pets' => '2'
 })
+owner2.save()
 
 owner3 = Owner.new({
   'first_name' => 'Giles',
@@ -147,6 +148,7 @@ owner3 = Owner.new({
   'contact_no' => '02953214760',
   'number_of_pets' => '3'
 })
+owner3.save()
 
 owner4 = Owner.new({
   'first_name' => 'Derek',
@@ -155,6 +157,7 @@ owner4 = Owner.new({
   'contact_no' => '03878325345',
   'number_of_pets' => '1'
 })
+owner4.save()
 
 owner5 = Owner.new({
   'first_name' => 'Clarissa',
@@ -163,6 +166,7 @@ owner5 = Owner.new({
   'contact_no' => '00983214565',
   'number_of_pets' => '3'
 })
+owner5.save()
 
 owner6 = Owner.new({
   'first_name' => 'Ernst',
@@ -171,6 +175,7 @@ owner6 = Owner.new({
   'contact_no' => '09988776655',
   'number_of_pets' => '1'
 })
+owner6.save()
 
 owner7 = Owner.new({
   'first_name' => 'Johnny',
@@ -179,6 +184,7 @@ owner7 = Owner.new({
   'contact_no' => '01567332109',
   'number_of_pets' => '2'
 })
+owner7.save()
 
 owner8 = Owner.new({
   'first_name' => 'Jon',
@@ -187,6 +193,7 @@ owner8 = Owner.new({
   'contact_no' => '01654970751',
   'number_of_pets' => '2'
 })
+owner8.save()
 
 
 binding.pry
