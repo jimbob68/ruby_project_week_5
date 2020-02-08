@@ -1,19 +1,12 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
-require( 'pry' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative( '../models/animal.rb' )
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 get '/animals' do
   @animals = Animal.all()
   erb( :"animals/index")
 end
-
-# post '/animals/new' do
-#   @animal = Animal.new(params)
-#   @animal.save
-#   erb (:"animals/index")
-# end
 
 post '/animals' do
   animal = Animal.new(params)

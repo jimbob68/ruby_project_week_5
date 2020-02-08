@@ -1,54 +1,35 @@
   <h1>Appointments Diary</h1>
 <form>
-<fieldset>
-  <legend>Vet's First Name:</legend>
-  <label for="first_name"></label>
-  <input type="text" id="first_name" name="first_name" value="">
-  <legend>Vet's Last Name:</legend>
-  <label for="last_name"></label>
-  <input type="text" id="last_name" name="last_name" value="">
-  <legend>Practice No:</legend>
-  <label for="practice_no"></label>
-  <input type="number" id="practice_no" name="practice_no" value="practice_no">
+  <fieldset>
+    <legend>Vet's First Name:</legend>
+    <label for="first_name"></label>
+    <input type="text" id="first_name" name="first_name" value="">
+    <legend>Vet's Last Name:</legend>
+    <label for="last_name"></label>
+    <input type="text" id="last_name" name="last_name" value="">
+    <legend>Practice No:</legend>
+    <label for="practice_no"></label>
+    <input type="number" id="practice_no" name="practice_no" value="practice_no">
 
     <h1>Vet Practice No</h1>
 
     <% for vet in @vets %>
-
-    <a href="/vets/<%= vet.id %>">
+      <a href="/vets/<%= vet.id %>">
       <%= vet.first_name %></a>
       <%= vet.last_name %>
       <%= vet.practice_no %>
-
-      <% end %>
-</fieldset>
+    <% end %>
+  </fieldset>
 </form>
-<br><br>
+
+  <br><br>
+
 <form="/action_page.php">
   Select a week:
 <!-- <label for="week">Weekly Appointment List</label> -->
   <input type="week"  name="year_week">
   <input type="submit">
-  <br><br>
+
+    <br><br>
+
   </form>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="form-el">
-  <label for="vet_name">Vet Name</label>
-      <input type="text"  name="vet_name" id="vet_name" value="vet_name"/>
-</div>
-
-<div class="form-el">
-  <label for="practice_no">Practice No</label>
-      <input type="text" name="practice_no" id="practice_no" value="practice_no"/>
-    </div> -->

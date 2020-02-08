@@ -3,37 +3,29 @@ body {
   font-family: 'Arial';
 }
 
-p {
-
-}
-
 nav ul li  {
     list-style-type: none;
-    /* float: left; */
-    /* width: 200px; */
-    /* text-align: center; */
     display: inline;
     padding: 10px;
  }
 
  h2 {
-    /* float: right; */
     margin: 20px;
  }
 
  h3 {
    text-align:center;
  }
+
  td, th {
    text-align: left;
  }
+
  td {
    padding: 10px 20px 0px 0px;
  }
+
  th {
    padding: 10px 20px 10px 0px;
    border-bottom: 1px solid blue;
- }
- table {
-   /* border-collapse: collapse; */
  }

@@ -1,7 +1,7 @@
 require_relative( '../models/vet.rb' )
 require_relative( '../models/animal.rb' )
 require_relative( '../models/owner.rb' )
-require( 'pry' )
+
 
 
 Vet.delete_all()
@@ -194,7 +194,3 @@ owner8 = Owner.new({
   'number_of_pets' => '2'
 })
 owner8.save()
-
-
-binding.pry
-nil
