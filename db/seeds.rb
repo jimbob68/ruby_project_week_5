@@ -83,7 +83,7 @@ animal4 = Animal.new({
   'dob' => '04/03/2017',
   'type' => 'cow',
   'treatment_notes' => 'udderectomy',
-  'vet_id' => vet4.id
+  'vet_id' => vet4                                .id
 })
 animal4.save()
 
